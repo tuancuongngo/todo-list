@@ -5,6 +5,10 @@ const taskRoute = require("./routes/tasks");
 // MIDDLEWARE TO PARSE JSON DATA to JS object accessible in req.body
 app.use(express.json());
 
+// To enable cross-origin requests, the Node.js application needs to include CORS middleware.
+const cors = require("cors");
+app.use(cors());
+
 // Load environment variables from .env file
 require("dotenv").config();
 

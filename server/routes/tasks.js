@@ -14,18 +14,20 @@ router.post("/", async (req, res) => {
     } catch (error) {
         res.status(500).json(error);
         console.log(`[FAILED] Adding new Task to DB`);
+        console.log(error);
     }
 });
 
 // READ
 router.get("/", async (req, res) => {
     try {
-        const taskList = await Task.find({});
-        res.status(200).json(pinList);
+        const taskList = await Task.find();
+        res.status(200).json(taskList);
         console.log(`[SUCCESS] Retrieving all Tasks from DB`);
     } catch (error) {
         res.status(500).json(error);
         console.log(`[FAILED] Retrieving all Tasks from DB`);
+        console.log(error);
     }
 });
 
@@ -38,6 +40,7 @@ router.put("/:id", async (req, res) => {
     } catch (error) {
         res.status(500).json(error);
         console.log(`[FAILED] Updating the specified Task from DB`);
+        console.log(error);
     }
 });
 
@@ -50,6 +53,7 @@ router.delete("/:id", async (req, res) => {
     } catch (error) {
         res.status(500).json(error);
         console.log(`[FAILED] Deleting the specified Task from DB`);
+        console.log(error);
     }
 });
 

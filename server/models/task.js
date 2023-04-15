@@ -8,6 +8,10 @@ const taskSchema = new mongoose.Schema({
         type: Boolean,
         default: false,
     },
+    timestamp: {
+        type: String,
+        default: Date.now(),
+    },
 });
 
 const Task = mongoose.model("Task", taskSchema);
