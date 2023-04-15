@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const taskRoute = require("./routes/tasks");
 
 // MIDDLEWARE TO PARSE JSON DATA to JS object accessible in req.body
 app.use(express.json());
@@ -15,6 +16,9 @@ const connection = mongoose.connection;
 connection.once("open", () => {
     console.log(`[SUCCESS] Database connection established.`);
 });
+
+// ROUTE
+app.use("/api/tasks", taskRoute);
 
 // Open port for connection
 const port = process.env.PORT || 4444;
