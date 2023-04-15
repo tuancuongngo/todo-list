@@ -1,1 +1,17 @@
 GET http://localhost:4444/api/tasks
+
+###
+
+POST http://localhost:4444/api/tasks
+
+Content-Type: application/json
+{
+    "taskName": "HELLO",
+    "completed": true
+}
+
+###
+DELETE http://localhost:4444/api/tasks/643abc435865eba1f9118e92
+
+###
+PUT http://localhost:4444/api/tasks/643ac01e307d125760bcf85f

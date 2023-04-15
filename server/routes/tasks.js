@@ -34,7 +34,9 @@ router.get("/", async (req, res) => {
 // UPDATE
 router.put("/:id", async (req, res) => {
     try {
-        const modTask = await Task.findOneAndUpdate({ _id: req.params.id }, req.body);
+        const modTask = await Task.findById(req.params.id);
+        modTask.completed = !modTask.completed;
+        modTask.save();
         res.status(200).json(modTask);
         console.log(`[SUCCESS] Updating the specified Task from DB`);
     } catch (error) {
