@@ -2,6 +2,7 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Task from "./components/Task";
+import PendingActionsIcon from "@mui/icons-material/PendingActions";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -74,7 +75,13 @@ function App() {
     return (
         <div className="App">
             <ToastContainer position="top-right" theme="colored" hideProgressBar={false} autoClose={2000} />
-            <h1>TODO</h1>
+            <h1>
+                TODO
+                <PendingActionsIcon
+                    className="PendingActionsIcon"
+                    style={{ transform: "scale(3.5) translateY(-2.5px)", marginLeft: "20px" }}
+                />
+            </h1>
             <div className="taskForm">
                 <input onChange={handleChange} type="text" value={taskInput} placeholder="Add New Task" />
                 <button onClick={addTask}>

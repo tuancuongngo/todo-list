@@ -83,12 +83,12 @@ h4 {
     font-size: 1.5rem;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .taskArea,
     .taskForm {
         width: 85%;
     }
-}
+} */
 
 .taskForm input,
 .taskForm button {
