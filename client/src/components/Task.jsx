@@ -11,6 +11,9 @@ function Task(props) {
                 props.setTasks((prevTasks) =>
                     prevTasks.map((task) => (task._id === response.data._id ? response.data : task))
                 );
+                if (response.data.completed) {
+                    props.taskCompleted(response.data.taskName);
+                }
             })
             .catch((error) => {
                 console.log(error);
@@ -21,6 +24,7 @@ function Task(props) {
         event.stopPropagation(); // STOP handleTaskClick from being run
         axios.delete(`http://localhost:4444/api/tasks/${props.taskInfo._id}`).then((response) => {
             props.setTasks((prevTasks) => prevTasks.filter((task) => task._id !== props.taskInfo._id));
+            props.taskDeleted(props.taskInfo.taskName);
         });
     };
 
