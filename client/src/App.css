@@ -26,7 +26,7 @@ h1 {
 
 h4 {
     font-size: 1.5rem;
-    font-weight: 200;
+    font-weight: 700;
     color: #f8f9fa;
     margin-bottom: 2rem;
     text-transform: uppercase;
@@ -92,7 +92,6 @@ h4 {
 .deleteBtn {
     width: 2rem;
     height: 2rem;
-
     color: white;
     cursor: pointer;
 }
