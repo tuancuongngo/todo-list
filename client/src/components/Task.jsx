@@ -17,10 +17,17 @@ function Task(props) {
             });
     };
 
+    const deleteTask = (event) => {
+        event.stopPropagation(); // STOP handleTaskClick from being run
+        axios.delete(`http://localhost:4444/api/tasks/${props.taskInfo._id}`).then((response) => {
+            props.setTasks((prevTasks) => prevTasks.filter((task) => task._id !== props.taskInfo._id));
+        });
+    };
+
     return (
         <div className={"task " + (props.taskInfo.completed ? "isComplete" : "")} onClick={handleTaskClick}>
             <div className="taskName">{props.taskInfo.taskName}</div>
-            <div className="deleteBtn">
+            <div className="deleteBtn" onClick={deleteTask}>
                 <span className="fas fa-trash-alt"></span>
             </div>
         </div>
