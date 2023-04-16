@@ -72,19 +72,6 @@ h4 {
     margin-left: 1.6rem;
 }
 
-/* .task .checkbox {
-    width: 2rem;
-    height: 2rem;
-    margin-right: 1.6rem;
-    border-radius: 0.2rem;
-    background-color: transparent;
-    border: #b9003a 2px solid;
-}
-
-.task.isComplete .checkbox {
-    background-color: #b9003a;
-} */
-
 .task.isComplete .taskName {
     text-decoration: line-through;
 }
