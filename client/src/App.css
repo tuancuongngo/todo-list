@@ -1,38 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: linear-gradient(to top, #070a52, #56005a, #8d0051, #b9003a, #d21312);
+    height: 100vh;
+}
+
 .App {
-  text-align: center;
+    padding: 3.5rem;
+    text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+    color: white;
+    font-size: 4.5rem;
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+    text-transform: uppercase;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h4 {
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: #f8f9fa;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    cursor: default;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.todoArea {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 5rem;
+    background-color: #070a52;
+    width: 45%;
+    border-radius: 0.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+@media (max-width: 768px) {
+    .todoArea {
+        width: 85%;
+    }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.task {
+    display: flex;
+    color: white;
+    padding: 1rem;
+    width: 100%;
+    border-bottom: #b9003a 1.5px solid;
+    transition: 0.3s;
+    cursor: pointer;
+    justify-content: space-between;
+}
+
+.task:hover {
+    opacity: 0.8;
+}
+
+.task > * {
+    font-size: 1.5rem;
+}
+
+.taskName {
+    margin-left: 1.6rem;
+}
+
+/* .task .checkbox {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1.6rem;
+    border-radius: 0.2rem;
+    background-color: transparent;
+    border: #b9003a 2px solid;
+}
+
+.task.isComplete .checkbox {
+    background-color: #b9003a;
+} */
+
+.task.isComplete .taskName {
+    text-decoration: line-through;
+}
+
+.deleteBtn {
+    width: 2rem;
+    height: 2rem;
+
+    color: white;
+    cursor: pointer;
+}
+
+.deleteBtn span {
+    font-size: 1.5rem;
 }
