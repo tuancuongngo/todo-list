@@ -28,7 +28,7 @@ function App() {
             <h4>Current TODO List</h4>
             <div className="todoArea">
                 {tasks.map((task) => (
-                    <Task taskInfo={task} key={task._id} />
+                    <Task taskInfo={task} setTasks={setTasks} key={task._id} />
                 ))}
             </div>
         </div>
